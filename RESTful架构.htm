@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+</head>
+<body>
+<h1 id="restful架构">RESTful架构</h1>
+
+<h2 id="rest概述">REST概述</h2>
+
+<p>传统的软件架构是以操作和处理为中心的，互联网软件架构应当以信息和资源为中心，REST就是倡导后者的一种软件架构风格。</p>
+
+<p>REST是<strong>RE</strong>presentation <strong>S</strong>tate <strong>T</strong>ransfer的缩写，由Roy Fielding于2000 年，他在他的博士论文中首次提出，是替换基于SOAP（Simple Object Access Protocol）的Web Service的方案，SOAP关注行为和处理，REST则关注数据。</p>
+
+<p>REST有五个关键词，分别是：资源、资源的表述（资源可以用最适合资源使用者的形式进行表述）、状态转移、统一接口、超文本驱动（通过URL进行识别和定位）。REST本身并不是一种具体的技术而是一种架构风格，符合这种风格的架构就称为RESTful架构，这是被公认的最适合互联网应用的分布式架构（另外两种是DO和RPC）。简单的说，所谓的REST就是<strong>将资源的状态以最适合客户端或服务器的形式从服务器转移到客户端或从客户端转移到服务器</strong>。</p>
+
+<p>由于REST本身关注资源而不是行为，所以REST中的行为是由HTTP方法来定义的，具体的说就是用POST、GET、PUT（或PATCH）、DELETE分别对应CRUD操作。</p>
+
+<p>HTTP请求格式：
+- 请求行：GET /index.html
+- 请求头：键值对
+- 空行
+- 消息体</p>
+
+<ul>
+<li>GET /employee/1122：将编号为1122的员工的表述转移到客户端</li>
+<li>POST /employee：</li>
+<li>DELETE /employee/1122</li>
+<li>PUT /employee/1122</li>
+</ul>
+
+<h2 id="spring对rest的支持">Spring对REST的支持</h2>
+
+<p>Spring从3.x版本开始对REST提供支持，在目前的版本中（4.x）主要包括以下几个方面：</p>
+
+<ul>
+<li>@GetMapping / @ PostMapping / @DeleteMapping / @PutMapping / @PatchMapping</li>
+<li>@PathVariable</li>
+<li>@ResponseBody / @RequestBody和HttpMessageConverter</li>
+<li>HiddenHttpMethodFilter</li>
+<li>ContentNegotiationViewResolver</li>
+<li>@RestController</li>
+<li>RestTemplate</li>
+</ul>
+
+</body>
+</html>
